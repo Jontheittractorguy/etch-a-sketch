@@ -18,6 +18,10 @@ function grid(x,y){
     };
 }
 
+function restart(){
+    window.location.reload();
+}
+
 let input = parseInt(prompt("What size grid would you like",16));
 
 if (input>100){

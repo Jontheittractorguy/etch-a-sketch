@@ -2,26 +2,35 @@
     min-height: 960px;
     min-width:960px;
     display: flex;
-    justify-content: stretch;
-    align-items: stretch;
 }
 
 body{
     flex:1;
-    min-height: 100%;
     display:flex;
     margin:0;
+    flex-direction: column;
+    align-items: center;
+}
+
+button{
+    flex:0 0 auto;
+    align-self: center;
+    padding:1% 2%;
+    margin: 3%;
+    border-radius: 10% 10% 10% 10%;
 }
 
 #main{
+    min-height: 960px;
+    min-width:960px;
     flex:1 1 100%;
     display: flex;
+    flex-direction: column;
 }
 
 .rows{
     flex:1 1 100%;
     display: flex;
-    flex-direction: column;
 }
 
 .row{
