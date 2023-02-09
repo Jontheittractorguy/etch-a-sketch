@@ -59,6 +59,7 @@ function rainbowMode(){
     colorMod = false;
 }
 
+// erase function
 function erase(){
     cmode.style.backgroundColor = "white";
     cmode.style.color = "black";
@@ -95,7 +96,7 @@ function mode(e){
     };
 };
 
-//
+//when to draw
 function draw(e,paint){
     let main = document.getElementById('main');
     main.onmousedown = ()=>{
