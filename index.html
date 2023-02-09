@@ -5,13 +5,31 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Etch-a-Sketchy</title>
     <script src="./etch.js" defer></script>
 </head>
-<body>
-    <button id="reset" onclick="restart()">Reset</button>
-    <div id="main">
+<body id="bodi">
+    <div id="header">
+        <h1 class="title">Etch-A-Sketchy</h1>
+    </div>
+    <div class="body">
+        <div id="main">
 
+        </div>
+        <div id="settings">
+            <div>
+            <div class="colors">
+                <input id="color" type="color" value="#333333"/>
+                <button id="cmode">Color mode</button>
+            </div>
+            <button id="rainbow">Rainbow mode</button>
+            <div class="changer">
+                <output id="slideDisplay"></output>
+                <input type="range" min="16" max="99" value="16" class="slider" id="gridRange">
+            </div>
+            <button id="reset" >Reset</button>
+            </div>
+        </div>
     </div>
 </body>
 </html>
