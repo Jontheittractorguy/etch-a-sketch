@@ -2,6 +2,7 @@ let main = document.getElementById('main');
 let bodi = document.getElementById('bodi');
 let slide = document.getElementById('gridRange');
 let sldis = document.getElementById('slideDisplay');
+let eraser = document.getElementById('eraser');
 let color = document.getElementById('color');
 let cmode = document.getElementById('cmode');
 let rainMode = document.getElementById('rainbow');
@@ -14,6 +15,7 @@ let paint = color.value;
 
 rainMode.onclick = () => rainbowMode();
 cmode.onclick = () => colorMode();
+eraser.onclick = () => erase();
 reset.onclick = () => slider(slide.value);
 main.onmouseleave = () => out()
 slide.onchange = (e) => {
@@ -39,6 +41,8 @@ function colorMode(){
     rainMode.style.color = "black";
     cmode.style.backgroundColor = "blue";
     cmode.style.color = "white";
+    eraser.style.backgroundColor = "white";
+    eraser.style.color = "black";
     rainb = false;
     colorMod = true;
 }
@@ -49,7 +53,20 @@ function rainbowMode(){
     rainMode.style.color = "white";
     cmode.style.backgroundColor = "white";
     cmode.style.color = "black";
+    eraser.style.backgroundColor = "white";
+    eraser.style.color = "black";
     rainb = true;
+    colorMod = false;
+}
+
+function erase(){
+    cmode.style.backgroundColor = "white";
+    cmode.style.color = "black";
+    rainMode.style.backgroundColor = "white";
+    rainMode.style.color = "black";
+    eraser.style.backgroundColor = "blue";
+    eraser.style.color = "white";
+    rainb = false;
     colorMod = false;
 }
 
@@ -72,14 +89,21 @@ function mode(e){
     } else if (colorMod === true && rainb === false){
         paint = color.value;
         draw(e,paint)
-    }
+    } else {
+        paint = "";
+        draw(e,paint);
+    };
 };
 
 //
 function draw(e,paint){
     let main = document.getElementById('main');
     main.onmousedown = ()=>{
-        e.target.style.borderColor = paint;
+        if (paint === ""){
+            e.target.style.borderColor = "black";
+        } else { 
+            e.target.style.borderColor = paint;
+        }
         e.target.style.backgroundColor = paint;
         flag = true;
     }
@@ -87,8 +111,12 @@ function draw(e,paint){
         flag=false;
     }
     if (flag === true){
-        e.target.style.borderColor = paint;
-        e.target.style.backgroundColor = paint
+        if (paint === ""){
+            e.target.style.borderColor = "black";
+        } else { 
+            e.target.style.borderColor = paint;
+        }
+        e.target.style.backgroundColor = paint;
     }
 }
 

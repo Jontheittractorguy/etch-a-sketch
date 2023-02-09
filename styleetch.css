@@ -14,9 +14,16 @@ body{
     background-color: rgb(206, 201, 201);
 }
 
+#header{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
 .title{
     font-size:60px;
     font-weight:900;
+    margin-bottom: 0%;
 }
 
 .body{
@@ -78,12 +85,6 @@ body{
     flex-direction: column;
 }
 
-button{
-    width: max-content;
-    padding: 8% 12%;
-    border-radius: 15%/35%;
-}
-
 .colors{
     min-height: 10%;
     width: 100%;
@@ -130,12 +131,21 @@ input[type='color']::-webkit-color-swatch-wrapper {
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
   }
 
-#cmode{
-    min-width: 100%;
+button{
+    width: 100%;
+    padding: 8% 12%;
+    border-radius: 15%/35%;
+    font-size:medium;
 }
 
 #rainbow{
     margin: 20%;
+    margin-top: 0;
+}
+
+#eraser{
+    background-color: white;
+    width: 100%;
 }
 
 .changer{
